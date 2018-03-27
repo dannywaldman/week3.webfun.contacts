@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The CodingDojo Contact Page</title>
+    <meta name="description" content="A contact page">
+    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function getCntHtml(fname, lname, desc) {
+            return `<h1>${fname} ${lname}</h1><h2>Click for description!</h2><h3>${desc}</h3>`;
+        }
+        $(document).ready(function () {
+            $('#cntForm').submit(function () {
+                $('#contacts')
+                    .append($('<div>', { class: 'contact-card' })
+                        .append(getCntHtml(
+                            $('input[id=fname]').val(),
+                            $('input[id=lname]').val(),
+                            $('textarea[id=desc]').val()
+                        )));
+                $(this).trigger('reset');
+                return false;
+            });
+            $('body').on('click', '.contact-card', function () {
+                $(this).children().toggle();
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <form action="#" method="POST" id="cntForm">
+        <label>First Name:
+            <input id="fname" placeholder="First Name" type="text" />
+        </label>
+        <label>Last Name:
+            <input id="lname" placeholder="Last Name" type="text" />
+        </label>
+        Description:<textarea rows="10" cols="40" id="desc"></textarea>
+        <button type="submit">Add User</button>
+    </form>
+    <div id="contacts"></div>
+</body>
+</html>

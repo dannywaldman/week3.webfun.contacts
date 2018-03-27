@@ -1,0 +1,49 @@
+@import url('reset.css');
+
+label {
+    display: block;
+    margin: 20px 0;
+}
+
+textarea {
+    display: block;
+}
+
+button {
+    margin-top: 10px;
+}
+
+form {
+    width: 45%;
+    display: inline-block;
+    margin: 30px;
+    text-align: left;
+}
+
+#contacts {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+    width: 45%;
+}
+
+.contact-card {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+h3 {
+    display: none;
+}
